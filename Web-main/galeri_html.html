@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri Foto - SD Islam</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script defer src="../js/firebase.js"></script>
+  <script defer src="../js/gallery.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SD ISLAM</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Beranda</a></li>
+        <li><a href="./kegiatan.html">Kegiatan</a></li>
+        <li><a href="./galeri.html" class="active">Galeri</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero small-hero">
+    <h1>Galeri Foto</h1>
+    <p>Kumpulan dokumentasi kegiatan sekolah.</p>
+  </section>
+
+  <section class="form-section">
+    <h2>Upload Foto Baru</h2>
+    <form id="uploadForm">
+      <input type="file" id="photoFile" accept="image/*" required />
+      <input type="text" id="photoTitle" placeholder="Judul Foto" required />
+      <button type="submit">Upload</button>
+    </form>
+    <p id="uploadStatus"></p>
+  </section>
+
+  <section class="gallery" id="photoGallery"></section>
+
+  <footer>
+    <p>© 2025 SD Islam. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
