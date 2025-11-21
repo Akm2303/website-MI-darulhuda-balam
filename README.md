@@ -1,4 +1,4 @@
-# Website MI Darul Huda Balam
+# Website MI Darul Huda Bandar Lampung 
 Website resmi MI Darul Huda Balam dengan fitur:
 - Profil Sekolah
 - Data Guru
