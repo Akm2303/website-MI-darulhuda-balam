@@ -25,7 +25,7 @@ function loadWebsiteData() {
                             <li>Menumbuhkan karakter islami melalui pembiasaan nilai-nilai agama dalam kehidupan sehari-hari</li>
                             <li>Membangun kerjasama yang harmonis antara sekolah, orang tua, dan masyarakat</li>
                         </ul>
-                        <p>SD Islam Terpadu Al-Falah didirikan pada tahun 2005 dengan komitmen untuk memberikan pendidikan terbaik yang memadukan kurikulum nasional dengan nilai-nilai Islam.</p>
+                        <p>MI Darul Huda Bandar Lampung didirikan pada tahun 2005 dengan komitmen untuk memberikan pendidikan terbaik yang memadukan kurikulum nasional dengan nilai-nilai Islam.</p>
                     `;
                 }
                 
@@ -60,17 +60,17 @@ function loadPrograms() {
                     {
                         title: 'Program Tahfiz Al-Qur\'an',
                         description: 'Program menghafal Al-Qur\'an dengan metode yang menyenangkan sesuai usia anak. Target hafalan 3 juz selama masa sekolah.',
-                        image: 'https://source.unsplash.com/random/600x400/?quran'
+                        image: public/images/tahfidz.png
                     },
                     {
                         title: 'Program Sains & Teknologi',
                         description: 'Pengenalan sains dan teknologi melalui eksperimen sederhana, robotika dasar, dan coding untuk anak.',
-                        image: 'https://source.unsplash.com/random/600x400/?science'
+                        image: public/images/sains.jpg
                     },
                     {
                         title: 'Program Seni & Kreativitas',
                         description: 'Mengembangkan bakat seni dan kreativitas siswa melalui kegiatan melukis, musik islami, dan drama.',
-                        image: 'https://source.unsplash.com/random/600x400/?art'
+                        image: public/images/seni.jpg
                     }
                 ];
                 
