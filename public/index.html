@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SD Islam Terpadu Al-Falah</title>
+    <title>MI Darul Huda Bandar Lampung</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -13,7 +13,7 @@
     <div class="admin-panel" id="adminPanel">
         <div class="container admin-content">
             <div class="admin-info">
-                <span id="adminInfo">Panel Admin - SD Islam Al-Falah</span>
+                <span id="adminInfo">Panel Admin - MI Darul Huda</span>
             </div>
             <div class="admin-actions">
                 <button id="manageContentBtn">Kelola Konten</button>
@@ -27,7 +27,14 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="images/logo.png" alt="Logo SD Islam Al-Falah">
+                <!-- Opsi 1: Logo dengan gambar -->
+                <img src="images/logo-mi-darul-huda.png" alt="Logo MI Darul Huda" onerror="this.style.display='none'; document.querySelector('.logo-text-only').style.display='block';">
+                
+                <!-- Opsi 2: Logo text sebagai fallback -->
+                <div class="logo-text-only" style="display: none;">
+                    <div class="logo-icon">🏫</div>
+                </div>
+                
                 <div class="logo-text">
                     <h1>MI Darul Huda Bandar Lampung</h1>
                     <p>Membentuk Generasi Qur'ani, Berakhlak Mulia dan Berprestasi</p>
@@ -160,7 +167,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>SD Islam Al-Falah</h3>
+                    <h3>MI Darul Huda</h3>
                     <p id="footerDescription">Mendidik generasi muslim yang berakhlak mulia, cerdas, kreatif, dan mandiri dalam lingkungan islami yang menyenangkan.</p>
                 </div>
                 <div class="footer-column">
@@ -187,7 +194,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; <span id="currentYear">2023</span> SD Islam Terpadu Al-Falah. Semua Hak Dilindungi.</p>
+                <p>&copy; <span id="currentYear">2023</span> MI Darul Huda Bandar Lampung. Semua Hak Dilindungi.</p>
             </div>
         </div>
     </footer>
