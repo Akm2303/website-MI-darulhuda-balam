@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MI Darul Huda Bandar Lampung</title>
+    
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/about.css">
+    
+    <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
@@ -27,14 +32,10 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <!-- Opsi 1: Logo dengan gambar -->
                 <img src="images/logo-mi-darul-huda.png" alt="Logo MI Darul Huda" onerror="this.style.display='none'; document.querySelector('.logo-text-only').style.display='block';">
-                
-                <!-- Opsi 2: Logo text sebagai fallback -->
                 <div class="logo-text-only" style="display: none;">
                     <div class="logo-icon">🏫</div>
                 </div>
-                
                 <div class="logo-text">
                     <h1>MI Darul Huda Bandar Lampung</h1>
                     <p>Membentuk Generasi Qur'ani, Berakhlak Mulia dan Berprestasi</p>
@@ -66,42 +67,155 @@
         </div>
     </section>
 
-    <!-- Tentang Kami -->
+    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
                 <h2>Tentang Kami</h2>
+                <p class="section-subtitle">Mengenal Lebih Dekat MI Darul Huda Bandar Lampung</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3 id="aboutTitle">Visi & Misi Sekolah</h3>
-                    <div id="aboutContent">
-                        <p><strong>Visi:</strong></p>
-                        <p><strong>“MADRASAH YANG BERKUALITAS ISLAMI DAN POPULIS".</strong></p>
-                        <ul> 
-                            <li>MI Darul Huda harus memperhatikan perkembangan dan tantangan masa depan diantaranya adalah perkembangan ilmu pengetahuan dan teknologi, globalisasi yang memungkinkan sangat cepatnya arus perubahan dan mobilitas antar dan lintas sektor serta tempat, era informasi, pengaruh globalisasi terhadap perubahan perilaku dan moral manusia, berubahnya kesadaran masyarakat dan orang tua terhadap pendidikan, era perdagangan bebas.</li>
-                            <li>Tantangan dan peluang itu harus direspon oleh MI Darul Huda, sehingga visi Madrasah diharapkan sesuai dengan arah perkembangan tersebut. Visi tidak lain merupakan cita-cita moral yang menggambarkan profil Madrasah yang diinginkan dimasa datang</li>
+                    <div class="vision-mission-container">
+                        <!-- Vision Card -->
+                        <div class="vision-card highlight-card">
+                            <div class="card-header">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3>Visi Sekolah</h3>
+                            </div>
+                            <div class="card-content">
+                                <blockquote class="vision-quote">
+                                    "MADRASAH YANG BERKUALITAS ISLAMI DAN POPULIS"
+                                </blockquote>
+                                <div class="vision-details">
+                                    <div class="vision-point">
+                                        <div class="point-icon">
+                                            <i class="fas fa-lightbulb"></i>
+                                        </div>
+                                        <div class="point-content">
+                                            <h4>Menghadapi Perkembangan Zaman</h4>
+                                            <p>MI Darul Huda memperhatikan perkembangan ilmu pengetahuan dan teknologi, globalisasi, serta tantangan era informasi untuk mempersiapkan siswa menghadapi masa depan.</p>
+                                        </div>
+                                    </div>
+                                    <div class="vision-point">
+                                        <div class="point-icon">
+                                            <i class="fas fa-rocket"></i>
+                                        </div>
+                                        <div class="point-content">
+                                            <h4>Cita-Cita Moral</h4>
+                                            <p>Visi merupakan cita-cita moral yang menggambarkan profil Madrasah yang diinginkan di masa depan, sesuai dengan arah perkembangan zaman.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                        </ul>
-                        <p><strong>Misi:</strong></p>
-                        <p><strong>Untuk mewujudkan Misi MI Darul Huda,diperlukan suatu misi berupa kegiatan jangka panjang dengan arah yang jelas yang akan dicapai dalam kurun waktu tertentu. Misi MI Darul Huda memberikan arah dalam mewujudkan visi sesuai dengan tujuan pendidikan nasional. Misi MI Darul Huda akan menjadi dasar dari program pokok madrasah</strong></p>
-                        <ul>
-                            <li>1.	Memotivasi dan membantu peserta didik untuk menggali potensi </li>
-                            <li>2.	Mewujudkan lingkungan madrasah yang agamis</li>
-                            <li>3.	Menanamkan kedisiplinan untuk mencapai tujuan pembelajaran</li>
-                            <li>4.	Menghasilkan peserta didik yang kompetitif</li>
-                        </ul>
-                        <p>MI Darul Huda didirikan pada tahun 2005 dengan komitmen untuk memberikan pendidikan terbaik yang memadukan kurikulum nasional dengan nilai-nilai Islam.</p>
+                        <!-- Mission Card -->
+                        <div class="mission-card highlight-card">
+                            <div class="card-header">
+                                <div class="icon-wrapper">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3>Misi Sekolah</h3>
+                            </div>
+                            <div class="card-content">
+                                <p class="mission-intro">Untuk mewujudkan Visi MI Darul Huda, diperlukan misi berupa kegiatan jangka panjang dengan arah yang jelas, menjadi dasar dari program pokok madrasah.</p>
+                                
+                                <div class="mission-grid">
+                                    <div class="mission-item">
+                                        <div class="mission-number">01</div>
+                                        <div class="mission-content">
+                                            <h4>Memotivasi Potensi</h4>
+                                            <p>Memotivasi dan membantu peserta didik untuk menggali potensi diri secara maksimal.</p>
+                                        </div>
+                                    </div>
+                                    <div class="mission-item">
+                                        <div class="mission-number">02</div>
+                                        <div class="mission-content">
+                                            <h4>Lingkungan Agamis</h4>
+                                            <p>Mewujudkan lingkungan madrasah yang agamis dan penuh nilai-nilai keislaman.</p>
+                                        </div>
+                                    </div>
+                                    <div class="mission-item">
+                                        <div class="mission-number">03</div>
+                                        <div class="mission-content">
+                                            <h4>Kedisiplinan</h4>
+                                            <p>Menanamkan kedisiplinan untuk mencapai tujuan pembelajaran yang optimal.</p>
+                                        </div>
+                                    </div>
+                                    <div class="mission-item">
+                                        <div class="mission-number">04</div>
+                                        <div class="mission-content">
+                                            <h4>Kompetitif</h4>
+                                            <p>Menghasilkan peserta didik yang kompetitif dan siap bersaing secara sehat.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- History Section -->
+                    <div class="history-section">
+                        <div class="history-card">
+                            <div class="history-header">
+                                <i class="fas fa-history"></i>
+                                <h3>Sejarah Berdiri</h3>
+                            </div>
+                            <div class="history-content">
+                                <p>MI Darul Huda didirikan pada tahun <strong>2005</strong> dengan komitmen kuat untuk memberikan pendidikan terbaik yang memadukan kurikulum nasional dengan nilai-nilai Islam. Selama bertahun-tahun, kami telah konsisten dalam mencetak generasi Qur'ani yang berakhlak mulia dan berprestasi.</p>
+                                <div class="history-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">18+</div>
+                                        <div class="stat-label">Tahun Pengalaman</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">500+</div>
+                                        <div class="stat-label">Siswa Terdidik</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">50+</div>
+                                        <div class="stat-label">Guru Berdedikasi</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="about-image">
-                    <img src='public/images/Gedung.jpg' alt="Gedung Sekolah" id="aboutImage">
+                    <div class="image-frame">
+                        <img src="images/Gedung.jpg" alt="MI Darul Huda Bandar Lampung" id="aboutImage">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h4>MI Darul Huda</h4>
+                                <p>Sejak 2005</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Info Cards -->
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <i class="fas fa-heart"></i>
+                            <h4>Pendidikan Karakter</h4>
+                            <p>Menanamkan nilai-nilai islami dalam kehidupan sehari-hari</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Komunitas Solid</h4>
+                            <p>Kerjasama harmonis antara sekolah, orang tua, dan masyarakat</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Program -->
+    <!-- Program Section -->
     <section class="program" id="program">
         <div class="container">
             <div class="section-title">
@@ -113,7 +227,7 @@
         </div>
     </section>
 
-    <!-- Fasilitas -->
+    <!-- Facilities Section -->
     <section class="facilities" id="facilities">
         <div class="container">
             <div class="section-title">
@@ -125,7 +239,7 @@
         </div>
     </section>
 
-    <!-- Prestasi -->
+    <!-- Achievements Section -->
     <section class="achievements" id="achievements">
         <div class="container">
             <div class="section-title">
@@ -137,7 +251,7 @@
         </div>
     </section>
 
-    <!-- Kontak -->
+    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">

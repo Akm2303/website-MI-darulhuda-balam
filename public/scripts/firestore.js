@@ -60,17 +60,17 @@ function loadPrograms() {
                     {
                         title: 'Program Tahfiz Al-Qur\'an',
                         description: 'Program menghafal Al-Qur\'an dengan metode yang menyenangkan sesuai usia anak. Target hafalan 3 juz selama masa sekolah.',
-                        image:'public/images/tahfidz.png'
+                        image:"images/tahfidz.png"
                     },
                     {
                         title: 'Program Sains & Teknologi',
                         description: 'Pengenalan sains dan teknologi melalui eksperimen sederhana, robotika dasar, dan coding untuk anak.',
-                        image:'public/images/sains.jpg'
+                        image:"images/sains.jpg"
                     },
                     {
                         title: 'Program Seni & Kreativitas',
                         description: 'Mengembangkan bakat seni dan kreativitas siswa melalui kegiatan melukis, musik islami, dan drama.',
-                        image: 'public/images/seni.jpg'
+                        image: "images/seni.jpg"
                     }
                 ];
                 
