@@ -60,17 +60,17 @@ function loadPrograms() {
                     {
                         title: 'Program Tahfiz Al-Qur\'an',
                         description: 'Program menghafal Al-Qur\'an dengan metode yang menyenangkan sesuai usia anak. Target hafalan 3 juz selama masa sekolah.',
-                        image: "public/images/tahfidz.png"
+                        image:'public/images/tahfidz.png'
                     },
                     {
                         title: 'Program Sains & Teknologi',
                         description: 'Pengenalan sains dan teknologi melalui eksperimen sederhana, robotika dasar, dan coding untuk anak.',
-                        image: "public/images/sains.jpg"
+                        image:'public/images/sains.jpg'
                     },
                     {
                         title: 'Program Seni & Kreativitas',
                         description: 'Mengembangkan bakat seni dan kreativitas siswa melalui kegiatan melukis, musik islami, dan drama.',
-                        image: "public/images/seni.jpg"
+                        image: 'public/images/seni.jpg'
                     }
                 ];
                 
@@ -164,10 +164,8 @@ function loadAchievements() {
             if (querySnapshot.empty) {
                 // Data default jika tidak ada prestasi di Firebase
                 const defaultAchievements = [
-                    { title: 'Juara 1 Olimpiade Matematika', description: 'Tim matematika SD Islam Al-Falah meraih juara 1 dalam Olimpiade Matematika Tingkat Kota 2023.' },
-                    { title: 'Juara 2 MTQ Nasional', description: 'Siswa kami meraih juara 2 Musabaqah Tilawatil Qur\'an Tingkat Nasional 2023.' },
-                    { title: 'Juara 3 Lomba Robotik', description: 'Tim robotik SD Islam Al-Falah meraih juara 3 dalam Kompetisi Robotik Sekolah Dasar 2023.' },
-                    { title: 'Juara 1 Pidato Bahasa Inggris', description: 'Siswi kami meraih juara 1 dalam lomba pidato bahasa Inggris tingkat provinsi 2023.' }
+                    { title: 'Juara 2 MTQ Nasional', description: 'Siswa kami meraih juara 2 Musabaqah Tilawatil Qur\'an Tingkat Nasional 2023.' }
+                    
                 ];
                 
                 defaultAchievements.forEach(achievement => {
