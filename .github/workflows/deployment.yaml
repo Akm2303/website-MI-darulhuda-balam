@@ -19,7 +19,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACOUNT_ID }}  # Fixed typo: ACOUNT_ID → ACCOUNT_ID
-          projectName: 'Web-deploy MI Darul Huda'
+          projectName: 'website-mi-darulhuda-balam'
           directory: './public'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
