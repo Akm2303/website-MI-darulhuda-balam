@@ -123,11 +123,43 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
-    color: white;
-    padding: 150px 0 100px;
+    position: relative;
+    height: 100vh;
+    background: url('images/Gedung.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-top: 80px;
+    color: white;
+    overflow: hidden;
+}
+/* Overlay gelap agar teks terlihat */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 40, 40, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+/* Text highlight */
+.hero-content h1 {
+    position: relative;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.hero-content p {
+    position: relative;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+
 }
 
 .hero h2 {
@@ -144,16 +176,18 @@ nav a:hover::after {
     margin-right: auto;
 }
 
-.btn {
-    display: inline-block;
+/* Button */
+.hero-btn {
+    position: relative;
+    padding: 12px 28px;
     background: white;
-    color: #2E8B57;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
+    color: #2d8d5c;
     font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
 .btn:hover {
