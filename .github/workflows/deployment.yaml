@@ -1,4 +1,4 @@
-name: Deploy to Cloudflare Pages
+name: Deploy to Cloudflare Pages and Firebase
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy to Cloudflare Pages
+    name: Deploy to Cloudflare Pages and Firebase
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +30,15 @@ jobs:
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'sd-islam-alfalah'
+          accountId: ${{ secrets.CLOUDFLARE_ACOUNT_ID }}
+          projectName: 'Web-deploy MI Darul Huda'
           directory: './public'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACOUNT }}'
+          channelId: live
+          projectId: darul-huda-web-ae9fa

@@ -1,12 +1,13 @@
 // Konfigurasi Firebase
 const firebaseConfig = {
     // GANTI DENGAN KONFIGURASI FIREBASE ANDA
-    apiKey: "AIzaSyEXAMPLEEXAMPLEEXAMPLEEXAMPLE",
-    authDomain: "sd-islam-alfalah.firebaseapp.com",
-    projectId: "sd-islam-alfalah",
-    storageBucket: "sd-islam-alfalah.appspot.com",
-    messagingSenderId: "1234567890",
-    appId: "1:1234567890:web:abcdef123456"
+    apiKey: "AIzaSyCFlm5SqLoSpUQL0Eo9Htj_aDuBLumplT8",
+    authDomain: "darul-huda-web-ae9fa.firebaseapp.com",
+    projectId: "darul-huda-web-ae9fa",
+    storageBucket: "darul-huda-web-ae9fa.firebasestorage.app",
+    messagingSenderId: "343029892756",
+    appId: "1:343029892756:web:1f165c145c485b5716d681",
+    measurementId: "G-R7ZKC98FLF"
 };
 
 // Inisialisasi Firebase

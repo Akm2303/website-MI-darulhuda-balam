@@ -9,7 +9,7 @@ function loadWebsiteData() {
                 
                 // Hero section
                 if (data.hero) {
-                    document.getElementById('heroTitle').textContent = data.hero.title || 'Selamat Datang di SD Islam Terpadu Al-Falah';
+                    document.getElementById('heroTitle').textContent = data.hero.title || 'Selamat Datang di MI Darul Huda Bandar Lampung';
                     document.getElementById('heroDescription').textContent = data.hero.description || 'Mendidik generasi muslim yang berakhlak mulia, cerdas, kreatif, dan mandiri dalam lingkungan islami yang menyenangkan.';
                 }
                 
