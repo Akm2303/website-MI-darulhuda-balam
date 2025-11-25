@@ -4,48 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MI Darul Huda Bandar Lampung</title>
-    
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/about.css">
-    <link rel="stylesheet" href="styles/latar.css">
-    <link rel="stylesheet" href="styles/adminpanel.css">
-    
-    <!-- External Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 </head>
 <body>
-<!-- Header -->
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <img src="images/logo-mi-darul-huda.png" alt="Logo MI Darul Huda" onerror="this.style.display='none'; document.querySelector('.logo-text-only').style.display='block';">
-                <div class="logo-text-only" style="display: none;">
-                    <div class="logo-icon">🏫</div>
-                </div>
-                <div class="logo-text">
-                    <h1>MI Darul Huda Bandar Lampung</h1>
-                    <p>Membentuk Generasi Qur'ani, Berakhlak Mulia dan Berprestasi</p>
-                </div>
-            </div>
-            <nav>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul>
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#program">Program</a></li>
-                    <li><a href="#facilities">Kegiatan</a></li>
-                    <li><a href="#achievements">Prestasi</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                    <li><a href="#Admin" id="adminPanel">Admin</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!-- Hero Section -->
+<!-- ========================= NAVBAR ========================= -->
+<nav>
+    <div class="logo">
+        <img src="images/logo yapisda.png" alt="logo">
+        <h2>MI Darul Huda Bandar Lampung</h2>
+    </div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+
+        <li>
+            <a href="#">Profil <i class="fa-solid fa-caret-down"></i></a>
+            <ul>
+                <li><a href="#">Profil Sekolah</a></li>
+                <li><a href="#">Visi dan Misi</a></li>
+                <li><a href="#">Struktur Organisasi</a></li>
+                <li><a href="#">Sarana & Prasarana</a></li>
+                <li><a href="#">Galeri Foto</a></li>
+                <li><a href="#">Guru & Tenaga Kependidikan</a></li>
+                <li><a href="#">Program Ekstrakurikuler</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Kegiatan</a></li>
+        <li><a href="#">PPDB</a></li>
+        <li><a href="#">Hubungi Kami</a></li>
+    </ul>
+</nav>
+<!-- ========================= Hero Section ========================= -->
     <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -54,77 +43,14 @@
         <a href="#about" class="hero-btn">Pelajari Lebih Lanjut</a>
     </div>
 </section>
-    <!-- Program Section -->
-    <section class="program" id="program">
-        <div class="container">
-            <div class="section-title">
-                <h2>Program Unggulan</h2>
-            </div>
-            <div class="program-grid" id="programsContainer">
-                <!-- Program akan dimuat dari Firebase -->
-            </div>
-        </div>
-    </section>
+<!-- ========================= SECTION SAMPLE ========================= -->
+<section class="section">
+    <h2>Foto Kegiatan</h2>
 
-    <!-- Achievements Section -->
-    <section class="achievements" id="achievements">
-        <div class="container">
-            <div class="section-title">
-                <h2>Prestasi Siswa</h2>
-            </div>
-            <div class="achievement-slider" id="achievementsContainer">
-                <!-- Prestasi akan dimuat dari Firebase -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal Kelola Konten -->
-    <div class="modal" id="contentModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Kelola Konten Website</h3>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="form-group">
-                <label>Bagian yang ingin diubah:</label>
-                <select id="contentSection">
-                    <option value="hero">Hero Section</option>
-                    <option value="about">Tentang Kami</option>
-                    <option value="programs">Program</option>
-                    <option value="facilities">Fasilitas</option>
-                    <option value="achievements">Prestasi</option>
-                    <option value="contact">Kontak</option>
-                </select>
-            </div>
-            <div id="contentForm">
-                <!-- Form akan diisi berdasarkan pilihan section -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Pesan Masuk -->
-    <div class="modal" id="messagesModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Pesan Masuk</h3>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div id="messagesList">
-                <!-- Daftar pesan akan dimuat dari Firebase -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Notifikasi -->
-    <div class="notification" id="notification"></div>
-
-    <!-- Loading -->
-    <div class="loading" id="loading">
-        <div class="spinner"></div>
-        <p>Memuat data...</p>
-    </div>
-
-    <!-- Firebase SDK -->
+    <img src="images/foto1.jpg" width="100%" alt="">
+	
+</section>
+   <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
@@ -136,5 +62,6 @@
     <script src="scripts/firestore.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/adminpanel.js"></script>
+
 </body>
 </html>
