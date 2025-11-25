@@ -4,7 +4,7 @@
         /* ========================= NAVBAR ========================= */
         nav {
             width: 100%;
-            background: #107010;
+            background: #8a918a;
             padding: 12px 40px;
             display: flex;
             justify-content: space-between;
@@ -30,7 +30,12 @@
        nav .logo:hover h1 {
             color: #055c2b;
         }  
-
+        nav .logo-text {
+            font-size: 16px;   /* ubah ukuran sesuai keinginan, contoh: 18px, 16px */
+            font-weight: 600;
+            color: white;      /* sesuaikan jika background hijau */
+            line-height: 1.2;  /* biar rapi */
+        }
         nav .logo img {
             height: 30px;
         }
