@@ -47,8 +47,8 @@
         nav ul li a {
             text-decoration: none;
             color: #004d25;
-            font-weight: 600;
-            font-size: 112px;
+            font-weight: 500;
+            font-size: 12px;
             padding: 5px;
             transition: 0.2s ease;
         }
