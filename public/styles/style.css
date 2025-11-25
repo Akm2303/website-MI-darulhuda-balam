@@ -31,7 +31,7 @@
             color: #055c2b;
         }  
         nav .logo-text {
-            font-size: 16px;   /* ubah ukuran sesuai keinginan, contoh: 18px, 16px */
+            font-size: 11px;   /* ubah ukuran sesuai keinginan, contoh: 18px, 16px */
             font-weight: 600;
             color: white;      /* sesuaikan jika background hijau */
             line-height: 1.2;  /* biar rapi */
@@ -53,7 +53,7 @@
             text-decoration: none;
             color: #004d25;
             font-weight: 500;
-            font-size: 20px;
+            font-size: 12px;
             padding: 5px;
             transition: 0.2s ease;
         }
