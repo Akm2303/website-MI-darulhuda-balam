@@ -4,7 +4,7 @@
         /* ========================= NAVBAR ========================= */
         nav {
             width: 100%;
-            background: #ffffff;
+            background: #107010;
             padding: 12px 40px;
             display: flex;
             justify-content: space-between;
@@ -21,18 +21,18 @@
             gap: 10px;
         }
         nav .logo h1 {
-            font-size: 16px;     /* naikkan ukuran */
+            font-size: 12px;     /* naikkan ukuran */
             font-weight: 600;
-            color: #004d25;
+            color: #020302;
             margin: 0;
             transition: 0.2s ease;
        }
        nav .logo:hover h1 {
-            color: #0a8c42;
+            color: #055c2b;
         }  
 
         nav .logo img {
-            height: 25px;
+            height: 30px;
         }
 
         nav ul {
