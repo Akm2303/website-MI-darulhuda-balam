@@ -21,8 +21,8 @@
             gap: 10px;
         }
         nav .logo h1 {
-            font-size: 26px;     /* naikkan ukuran */
-            font-weight: 700;
+            font-size: 16px;     /* naikkan ukuran */
+            font-weight: 600;
             color: #004d25;
             margin: 0;
             transition: 0.2s ease;
