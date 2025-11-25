@@ -20,9 +20,19 @@
             align-items: center;
             gap: 10px;
         }
+        nav .logo h1 {
+            font-size: 26px;     /* naikkan ukuran */
+            font-weight: 700;
+            color: #004d25;
+            margin: 0;
+            transition: 0.2s ease;
+       }
+       nav .logo:hover h1 {
+            color: #0a8c42;
+        }  
 
         nav .logo img {
-            height: 50px;
+            height: 25px;
         }
 
         nav ul {
@@ -38,8 +48,9 @@
             text-decoration: none;
             color: #004d25;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 112px;
             padding: 5px;
+            transition: 0.2s ease;
         }
 
         nav ul li:hover > a {
