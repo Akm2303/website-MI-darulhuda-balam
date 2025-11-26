@@ -1,73 +1,92 @@
-// State
-let currentUser = null;
+// =============================
+// FUNGSI AUTHENTICATION
+// =============================
 
-// Fungsi untuk menampilkan notifikasi
-function showNotification(message, type = 'success') {
-    const notification = document.getElementById('notification');
-    notification.textContent = message;
-    notification.className = `notification ${type} show`;
-    
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 3000);
-}
+function login() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
 
-// Fungsi untuk menampilkan/menyembunyikan loading
-function setLoading(show) {
-    const loading = document.getElementById('loading');
-    if (show) {
-        loading.classList.add('show');
-    } else {
-        loading.classList.remove('show');
+    if (!email || !password) {
+        showAlert('Harap isi email dan password!', 'error', 'loginAlert');
+        return;
     }
-}
 
-// Fungsi login
-function login(email, password) {
-    setLoading(true);
-    
-    return auth.signInWithEmailAndPassword(email, password)
+    auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            setLoading(false);
-            showNotification('Login berhasil!', 'success');
-            return userCredential;
+            currentUser = userCredential.user;
+            showDashboard();
+            showAlert('Login berhasil!', 'success');
         })
         .catch((error) => {
-            setLoading(false);
-            showNotification('Login gagal: ' + error.message, 'error');
-            throw error;
+            console.error('Login error:', error);
+            showAlert(`Error: ${error.message}`, 'error', 'loginAlert');
         });
 }
 
-// Fungsi logout
-function logout() {
-    return auth.signOut()
+function register() {
+    const name = document.getElementById('regName').value;
+    const email = document.getElementById('regEmail').value;
+    const password = document.getElementById('regPassword').value;
+    const role = document.getElementById('regRole').value;
+
+    if (!name || !email || !password) {
+        showAlert('Harap isi semua field!', 'error', 'registerAlert');
+        return;
+    }
+
+    if (password.length < 6) {
+        showAlert('Password harus minimal 6 karakter!', 'error', 'registerAlert');
+        return;
+    }
+
+    auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            
+            // Create user record in database
+            return db.ref('users/' + user.uid).set({
+                uid: user.uid,
+                email: email,
+                displayName: name,
+                role: role,
+                createdAt: new Date().toISOString(),
+                lastLogin: new Date().toISOString()
+            });
+        })
         .then(() => {
-            showNotification('Logout berhasil!', 'success');
+            showAlert('Pendaftaran berhasil! Silakan login.', 'success', 'registerAlert');
+            showLogin();
+            // Clear form
+            document.getElementById('regName').value = '';
+            document.getElementById('regEmail').value = '';
+            document.getElementById('regPassword').value = '';
         })
         .catch((error) => {
-            showNotification('Logout gagal: ' + error.message, 'error');
-            throw error;
+            console.error('Registration error:', error);
+            showAlert(`Error: ${error.message}`, 'error', 'registerAlert');
         });
 }
 
-// Cek status login saat aplikasi dimulai
-auth.onAuthStateChanged(user => {
-    const adminPanel = document.getElementById('adminPanel');
-    const adminLoginBtn = document.getElementById('adminLoginBtn');
-    
+function logout() {
+    auth.signOut()
+        .then(() => {
+            currentUser = null;
+            showLogin();
+            showAlert('Logout berhasil!', 'success');
+        })
+        .catch((error) => {
+            console.error('Logout error:', error);
+            showAlert(`Error: ${error.message}`, 'error');
+        });
+}
+
+// Auth State Listener
+auth.onAuthStateChanged((user) => {
     if (user) {
         currentUser = user;
-        adminPanel.classList.add('show');
-        adminLoginBtn.textContent = 'Admin';
+        showDashboard();
     } else {
         currentUser = null;
-        adminPanel.classList.remove('show');
-        adminLoginBtn.textContent = 'Admin';
+        showLogin();
     }
 });
-
-// Export functions untuk digunakan di file lain
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { login, logout, currentUser, showNotification, setLoading };
-}
