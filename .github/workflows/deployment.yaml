@@ -26,7 +26,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACOUNT_ID }}  # Fixed typo: ACOUNT_ID → ACCOUNT_ID
           projectName: 'website-mi-darulhuda-balam'
-          directory: './public/scripts'
+          directory: './public'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to Firebase
