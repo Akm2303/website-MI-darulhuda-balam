@@ -1,19 +1,27 @@
 // Konfigurasi Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+  import { getDatabase } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+  import { getStorage } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
+
 const firebaseConfig = {
-    // GANTI DENGAN KONFIGURASI FIREBASE ANDA
-    apiKey: "AIzaSyCFlm5SqLoSpUQL0Eo9Htj_aDuBLumplT8",
-    authDomain: "darul-huda-web-ae9fa.firebaseapp.com",
-    projectId: "darul-huda-web-ae9fa",
-    storageBucket: "darul-huda-web-ae9fa.firebasestorage.com",
-    messagingSenderId: "343029892756",
-    appId: "1:343029892756:web:1f165c145c485b5716d681",
-    measurementId: "G-R7ZKC98FLF"
-};
+    apiKey: "AIzaSyApNKH811nkaAiGnP4TjOlR57VPr_Keghg",
+    authDomain: "darulhuda-balam.firebaseapp.com",
+    projectId: "darulhuda-balam",
+    storageBucket: "darulhuda-balam.appspot.com",
+    messagingSenderId: "200089179332",
+    appId: "1:200089179332:web:c3a904f43ebe79a1b8e591",
+    measurementId: "G-4P4770WH6T"
+  };
 
-// Inisialisasi Firebase
-firebase.initializeApp(firebaseConfig);
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
-// Inisialisasi services
-const db = firebase.database();
-const auth = firebase.auth();
-const storage = firebase.storage();
+  // Services (sama seperti v8 tetapi modular)
+  window.auth = getAuth(app);
+  window.db = getDatabase(app);
+  window.firestore = getFirestore(app);
+  window.storage = getStorage(app);
+
+  console.log("Firebase v12 connected successfully");
