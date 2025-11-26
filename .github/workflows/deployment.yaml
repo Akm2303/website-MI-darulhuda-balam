@@ -25,7 +25,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACOUNT_ID }}  # Fixed typo: ACOUNT_ID → ACCOUNT_ID
-          projectName: 'website-mi-darulhuda-balam'
+          projectName: 'darulhuda-balam'
           directory: './public'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
@@ -35,4 +35,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACOUNT }}'  # Fixed typo: ACOUNT → ACCOUNT
           channelId: live
-          projectId: darul-huda-web-ae9fa
+          projectId: darulhuda-balam
