@@ -7,34 +7,6 @@
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
-import { getStorage } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyApNKH811nkaAiGnP4TjOlR57VPr_Keghg",
-  authDomain: "darulhuda-balam.firebaseapp.com",
-  projectId: "darulhuda-balam",
-  storageBucket: "darulhuda-balam.appspot.com",
-  messagingSenderId: "200089179332",
-  appId: "1:200089179332:web:c3a904f43ebe79a1b8e591",
-  measurementId: "G-4P4770WH6T"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Expose globally jika HTML kamu butuh
-window.auth = getAuth(app);
-window.db = getDatabase(app);
-window.firestore = getFirestore(app);
-window.storage = getStorage(app);
-
-console.log("Firebase v12 connected successfully");
-</script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -244,7 +216,7 @@ console.log("Firebase v12 connected successfully");
     <script src="/public/scripts/app.js"></script>
     <script src="/public/scripts/auth.js"></script>
     <script src="/public/scripts/dashboard.js"></script>
-    <!-- <script src="/public/scripts/config.js"></script> -->
+    <script src="/public/scripts/config.js"></script>
     <script src="/public/scripts/photos.js"></script>
     <script src="/public/scripts/users.js"></script>
 </body>
