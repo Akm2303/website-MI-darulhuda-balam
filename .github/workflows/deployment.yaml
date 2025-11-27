@@ -36,5 +36,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACOUNT }}'  # Fixed typo: ACOUNT → ACCOUNT
           channelId: live
           projectId: darulhuda-balam
-          entryPoint: ./public
           force: true
