@@ -3,225 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIS Darul Huda Bandar Lampung - Sistem Admin</title>
+    <title>MIS Darul Huda Bandar Lampung - Website Resmi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/styles.css">
+    
 </head>
 <body>
-    <!-- Login Page -->
-    <div id="loginPage" class="login-container">
-        <div class="login-card">
-            <div class="login-logo">
-                <i class="bi bi-house-door"></i>
-            </div>
-            <h2>MIS Darul Huda Bandar Lampung</h2>
-            <p>Silakan login untuk mengakses sistem admin</p>
-            
-            <div class="alert" id="loginAlert"></div>
-            
-            <div class="form-group">
-                <label for="loginEmail">Email</label>
-                <input type="email" id="loginEmail" placeholder="Masukkan email admin">
-            </div>
-            
-            <div class="form-group">
-                <label for="loginPassword">Password</label>
-                <input type="password" id="loginPassword" placeholder="Masukkan password">
-            </div>
-            
-            <button class="btn" style="width: 100%; justify-content: center;" onclick="login()">
-                <i class="bi bi-box-arrow-in-right"></i> Login
-            </button>
-            
-            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
-                <p>Belum punya akun? <a href="#" onclick="showRegister()" style="color: var(--primary);">Daftar di sini</a></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Page -->
-    <div id="registerPage" class="login-container hidden">
-        <div class="login-card">
-            <div class="login-logo">
-                <i class="bi bi-person-plus"></i>
-            </div>
-            <h2>Pendaftaran Admin</h2>
-            <p>Buat akun admin baru untuk MIS Darul Huda</p>
-            
-            <div class="alert" id="registerAlert"></div>
-            
-            <div class="form-group">
-                <label for="regName">Nama Lengkap</label>
-                <input type="text" id="regName" placeholder="Masukkan nama lengkap">
-            </div>
-            
-            <div class="form-group">
-                <label for="regEmail">Email</label>
-                <input type="email" id="regEmail" placeholder="Masukkan email">
-            </div>
-            
-            <div class="form-group">
-                <label for="regPassword">Password</label>
-                <input type="password" id="regPassword" placeholder="Masukkan password (min. 6 karakter)">
-            </div>
-            
-            <div class="form-group">
-                <label for="regRole">Jabatan</label>
-                <select id="regRole">
-                    <option value="admin">Administrator</option>
-                    <option value="teacher">Guru</option>
-                    <option value="staff">Staff</option>
-                </select>
-            </div>
-            
-            <button class="btn" style="width: 100%; justify-content: center;" onclick="register()">
-                <i class="bi bi-person-plus"></i> Daftar
-            </button>
-            
-            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
-                <p>Sudah punya akun? <a href="#" onclick="showLogin()" style="color: var(--primary);">Login di sini</a></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Dashboard -->
-    <div id="dashboard" class="hidden">
+    <!-- Header -->
+    <header>
         <div class="container">
-            <header>
+            <div class="header-content">
                 <div class="logo">
                     <div class="logo-icon">
-                        <i class="bi bi-house-door"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>MIS Darul Huda Bandar Lampung</h1>
-                        <p>Sistem Administrasi dan Dokumentasi Kegiatan</p>
+                        <h1>MI Darul Huda Bandar Lampung</h1>
+                        <p>Mencerdaskan Kehidupan Bangsa</p>
                     </div>
                 </div>
-                
                 <nav>
-                    <button class="nav-btn logout" onclick="logout()">
-                        <i class="bi bi-box-arrow-right"></i> Logout
-                    </button>
+                    <ul>
+                        <li><a href="#home" class="active">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#programs">Program</a></li>
+                        <li><a href="#news">Berita</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
                 </nav>
-            </header>
-            
-            <div class="alert" id="mainAlert"></div>
-            
-            <!-- Dashboard Stats -->
-            <div class="dashboard-grid">
-                <div class="card stat-card">
-                    <div class="icon">
-                        <i class="bi bi-images"></i>
-                    </div>
-                    <h3 id="totalPhotos">0</h3>
-                    <p>Foto Kegiatan</p>
-                </div>
-                
-                <div class="card stat-card">
-                    <div class="icon">
-                        <i class="bi bi-people"></i>
-                    </div>
-                    <h3 id="totalUsers">0</h3>
-                    <p>Pengguna Terdaftar</p>
-                </div>
-                
-                <div class="card stat-card">
-                    <div class="icon">
-                        <i class="bi bi-calendar-event"></i>
-                    </div>
-                    <h3 id="totalActivities">0</h3>
-                    <p>Kegiatan</p>
-                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            
-            <!-- Tabs Navigation -->
-            <div class="card">
-                <div class="tabs">
-                    <div class="tab active" onclick="switchTab('uploadTab')">Upload Foto Kegiatan</div>
-                    <div class="tab" onclick="switchTab('photosTab')">Daftar Foto</div>
-                    <div class="tab" onclick="switchTab('usersTab')">Manajemen User</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Selamat Datang di MIS Darul Huda Bandar Lampung</h2>
+            <p>Kami berkomitmen untuk memberikan pendidikan terbaik dengan kurikulum yang inovatif dan pengajar yang berkualitas.</p>
+            <div class="hero-buttons">
+                <a href="#programs" class="btn">Lihat Program</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Sekolah Kami</h2>
+                <p>Mengenal lebih dekat visi, misi, dan nilai-nilai yang kami anut dalam mendidik generasi penerus bangsa.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Visi dan Misi Sekolah</h3>
+                    <p>Sekolah Cerdas Indonesia didirikan dengan tujuan untuk menciptakan lingkungan belajar yang inspiratif dan mendorong siswa untuk mencapai potensi terbaik mereka.</p>
+                    <p>Kami percaya bahwa setiap anak memiliki bakat unik yang perlu dikembangkan melalui pendekatan pendidikan yang holistik dan berpusat pada siswa.</p>
+                    <p>Dengan fasilitas modern dan metode pengajaran terkini, kami berkomitmen untuk mempersiapkan siswa menghadapi tantangan masa depan.</p>
+                    <a href="#" class="btn" style="margin-top: 20px;">Selengkapnya</a>
                 </div>
-                
-                <!-- Upload Tab -->
-                <div id="uploadTab" class="tab-content active">
-                    <h3><i class="bi bi-cloud-upload"></i> Upload Foto Kegiatan</h3>
-                    
-                    <div class="form-group">
-                        <label for="photoTitle">Judul Kegiatan</label>
-                        <input type="text" id="photoTitle" placeholder="Contoh: Kegiatan Outbound Kelas 3">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="photoDescription">Deskripsi Kegiatan</label>
-                        <textarea id="photoDescription" placeholder="Jelaskan detail kegiatan yang dilakukan"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="photoCategory">Kategori Kegiatan</label>
-                        <select id="photoCategory">
-                            <option value="academic">Akademik</option>
-                            <option value="extracurricular">Ekstrakurikuler</option>
-                            <option value="religious">Keagamaan</option>
-                            <option value="sports">Olahraga</option>
-                            <option value="event">Acara Khusus</option>
-                            <option value="other">Lainnya</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="photoDate">Tanggal Kegiatan</label>
-                        <input type="date" id="photoDate">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="photoFile">Pilih Foto</label>
-                        <input type="file" id="photoFile" accept="image/*">
-                    </div>
-                    
-                    <div class="progress-bar" id="progressBar">
-                        <div class="progress" id="progress"></div>
-                    </div>
-                    
-                    <button class="btn" onclick="uploadPhoto()">
-                        <i class="bi bi-cloud-upload"></i> Upload Foto
-                    </button>
-                </div>
-                
-                <!-- Photos Tab -->
-                <div id="photosTab" class="tab-content">
-                    <h3><i class="bi bi-images"></i> Daftar Foto Kegiatan</h3>
-                    
-                    <div class="photo-grid" id="photosList">
-                        <!-- Photos will be loaded here -->
-                    </div>
-                </div>
-                
-                <!-- Users Tab -->
-                <div id="usersTab" class="tab-content">
-                    <h3><i class="bi bi-people"></i> Manajemen Pengguna</h3>
-                    
-                    <div class="user-list" id="usersList">
-                        <!-- Users will be loaded here -->
+                <div class="about-image">
+                    <!-- Placeholder untuk gambar sekolah -->
+                    <div style="width: 100%; height: 400px; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; color: #6b7280;">
+                        <i class="fas fa-school" style="font-size: 60px;"></i>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Custom JavaScript -->
-    <script src="/public/scripts/app.js"></script>
-    <script src="/public/scripts/auth.js"></script>
-    <script src="/public/scripts/dashboard.js"></script>
-    <script src="/public/scripts/config.js"></script>
-    <script src="/public/scripts/photos.js"></script>
-    <script src="/public/scripts/users.js"></script>
+    <!-- Programs Section -->
+    <section id="programs" style="background-color: #f3f4f6;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Program Pendidikan</h2>
+                <p>Berbagai program unggulan yang kami tawarkan untuk mengembangkan potensi siswa secara maksimal.</p>
+            </div>
+            <div class="programs-grid" id="programs-container">
+                <!-- Program akan dimuat dari Firestore -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Berita & Kegiatan Terbaru</h2>
+                <p>Ikuti perkembangan terbaru dari kegiatan sekolah dan informasi penting lainnya.</p>
+            </div>
+            <div class="news-grid" id="news-container">
+                <!-- Berita akan dimuat dari Firestore -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: #f3f4f6;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Jangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan atau ingin mengetahui lebih lanjut tentang sekolah kami.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>Jl. Ir Sutami No. 32, Bandar Lampung, Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>+62 21 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>darulhuda.co.id</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Jumat: 07.00 - 16.00 WIB</p>
+                            <p>Sabtu: 08.00 - 12.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang Sekolah</h3>
+                    <p>MIS Darul Huda Bandar Lampung adalah lembaga pendidikan yang berkomitmen untuk memberikan pendidikan terbaik dengan kurikulum yang inovatif.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#programs">Program</a></li>
+                        <li><a href="#news">Berita</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Program Unggulan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Program Reguler</a></li>
+                        <li><a href="#">Program Bahasa</a></li>
+                        <li><a href="#">Program Sains</a></li>
+                        <li><a href="#">Program Olahraga</a></li>
+                        <li><a href="#">Program Seni</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Ir Sutami No. 32, Bandar Lampung, Indonesia</li>
+                        <li><i class="fas fa-phone"></i> +62 21 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> darulhuda.co.id</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MIS Darul Huda Bandar Lampung. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase Configuration -->
+    <script>
+        // Konfigurasi Firebase (ganti dengan konfigurasi project Anda)
+        const firebaseConfig = {
+            apiKey: "AIzaSyApNKH811nkaAiGnP4TjOlR57VPr_Keghg",
+            authDomain: "darulhuda-balam.firebaseapp.com",
+            projectId: "darulhuda-balam",
+            storageBucket: "darulhuda-balam.appspot.com",
+            messagingSenderId: "200089179332",
+            appId: "1:200089179332:web:c3a904f43ebe79a1b8e591",
+            measurementId: "G-4P4770WH6T"
+        };
+        
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+    <script src="script/main.js"></script>
 </body>
 </html>
