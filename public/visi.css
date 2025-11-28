@@ -61,15 +61,19 @@
         }
         
         .content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
             gap: 30px;
             margin-bottom: 40px;
         }
         
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
         .vision-section, .mission-section, .goals-section {
-            flex: 1;
-            min-width: 300px;
             background: white;
             padding: 35px;
             border-radius: 12px;
@@ -192,16 +196,16 @@
         
         .goals-intro {
             margin-bottom: 25px;
-            font-size: 1.1rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.6;
             background: #f8f9fa;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             border-left: 4px solid #f39c12;
         }
         
         .goal-category {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .goal-category:last-child {
@@ -213,16 +217,16 @@
             margin-bottom: 15px;
             padding-bottom: 8px;
             border-bottom: 2px dashed #ddd;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
         
         .year-range {
             display: inline-block;
             background: #f8f9fa;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.9rem;
-            margin-left: 10px;
+            font-size: 0.8rem;
+            margin-left: 8px;
             color: #7f8c8d;
             font-weight: normal;
         }
@@ -232,8 +236,8 @@
         }
         
         .goal-list li {
-            margin-bottom: 15px;
-            padding: 15px;
+            margin-bottom: 12px;
+            padding: 12px;
             border-radius: 8px;
             background: #f8f9fa;
             display: flex;
@@ -248,21 +252,22 @@
         }
         
         .goal-icon {
-            margin-right: 15px;
+            margin-right: 12px;
             color: #2c5c2c;
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-top: 3px;
         }
         
         .goal-content h3 {
             color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            margin-bottom: 6px;
+            font-size: 1rem;
         }
         
         .goal-content p {
             color: #555;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
         
         footer {
@@ -283,11 +288,13 @@
             margin-bottom: 10px;
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .content-wrapper {
-                flex-direction: column;
+                grid-template-columns: 1fr;
             }
-            
+        }
+        
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
             }
