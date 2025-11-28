@@ -175,7 +175,7 @@
         
         .section-title h2 {
             font-size: 2rem;
-            color: var(--primary);
+            color: var (--success);
             margin-bottom: 15px;
         }
         

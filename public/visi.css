@@ -6,7 +6,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
             color: #333;
             line-height: 1.6;
             padding: 20px;
@@ -21,21 +21,43 @@
         header {
             text-align: center;
             margin-bottom: 40px;
-            padding: 20px;
-            background: #2c3e50;
+            padding: 30px;
+            background: linear-gradient(135deg, #2c5c2c 0%, #3a7b3a 100%);
             color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
         
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #e9f7ef;
+            color: #2c5c2c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-back:hover {
+            background: #d4f1e0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
         }
         
         .content-wrapper {
@@ -45,32 +67,73 @@
             margin-bottom: 40px;
         }
         
-        .vision-section, .mission-section {
+        .vision-section, .mission-section, .goals-section {
             flex: 1;
             min-width: 300px;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .vision-section:hover, .mission-section:hover {
+        .vision-section:hover, .mission-section:hover, .goals-section:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .vision-section::before, .mission-section::before, .goals-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+        
+        .vision-section::before {
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+        }
+        
+        .mission-section::before {
+            background: linear-gradient(90deg, #9b59b6, #e74c3c);
+        }
+        
+        .goals-section::before {
+            background: linear-gradient(90deg, #f39c12, #e67e22);
         }
         
         .section-title {
             color: #2c3e50;
             margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
+            padding-bottom: 12px;
+            border-bottom: 3px solid;
             display: inline-block;
+            font-size: 1.8rem;
+        }
+        
+        .vision-section .section-title {
+            border-color: #3498db;
+        }
+        
+        .mission-section .section-title {
+            border-color: #9b59b6;
+        }
+        
+        .goals-section .section-title {
+            border-color: #f39c12;
         }
         
         .vision-intro {
             margin-bottom: 25px;
             font-size: 1.1rem;
             line-height: 1.7;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
         }
         
         .indicators {
@@ -114,7 +177,7 @@
         .mission-list li {
             margin-bottom: 20px;
             padding-left: 20px;
-            border-left: 3px solid #2ecc71;
+            border-left: 3px solid #9b59b6;
             padding-bottom: 15px;
         }
         
@@ -127,12 +190,97 @@
             margin-bottom: 8px;
         }
         
+        .goals-intro {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .goal-category {
+            margin-bottom: 30px;
+        }
+        
+        .goal-category:last-child {
+            margin-bottom: 0;
+        }
+        
+        .goal-category-title {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px dashed #ddd;
+            font-size: 1.3rem;
+        }
+        
+        .year-range {
+            display: inline-block;
+            background: #f8f9fa;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            color: #7f8c8d;
+            font-weight: normal;
+        }
+        
+        .goal-list {
+            list-style-type: none;
+        }
+        
+        .goal-list li {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .goal-list li:hover {
+            background: #edf7f2;
+            transform: translateX(5px);
+        }
+        
+        .goal-icon {
+            margin-right: 15px;
+            color: #2c5c2c;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .goal-content h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .goal-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             margin-top: 40px;
             color: #7f8c8d;
             border-top: 1px solid #ddd;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c5c2c;
+            margin-bottom: 10px;
         }
         
         @media (max-width: 768px) {
@@ -141,6 +289,10 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .vision-section, .mission-section, .goals-section {
+                padding: 25px;
             }
         }
