@@ -1,74 +1,146 @@
-body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+* {
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
         
         header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
             background: #2c3e50;
             color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        
-        .content {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         h1 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-        
-        h2 {
-            color: #34495e;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-        
-        h3 {
-            color: #2c3e50;
-            margin-top: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        
-        .btn:hover {
-            background: #2980b9;
-        }
-        
-        ul {
-            margin-left: 20px;
-        }
-        
-        li {
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
         
-        .highlight {
-            background: #ecf0f1;
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .vision-section, .mission-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .vision-section:hover, .mission-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+        }
+        
+        .vision-intro {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .indicators {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .indicator {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        
+        .indicator-number {
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .indicator-content h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .indicator-content p {
+            color: #555;
+        }
+        
+        .mission-list {
+            list-style-type: none;
+        }
+        
+        .mission-list li {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #2ecc71;
+            padding-bottom: 15px;
+        }
+        
+        .mission-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .mission-list h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            text-align: center;
             padding: 20px;
-            border-left: 4px solid #3498db;
-            margin: 20px 0;
+            margin-top: 40px;
+            color: #7f8c8d;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
         }
