@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Dan Kegiatan - MI Darul Huda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="berita.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kegiatan MI Darul Huda</h1>
+            <p class="subtitle">Melihat lebih dekat lingkungan belajar yang inspiratif</p>
+        </header>
+        <!-- Slider Sederhana (Versi yang Anda minta) -->
+        <div class="slider-box">
+            <img id="slideImage" src="images/Gedung.jpg" alt="Gedung MI Darul Huda">
+            <div class="slider-controls">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <p>Galeri ini menunjukkan berbagai kegiatan di MI Darul Huda yang mendukung proses belajar mengajar yang optimal.</p>
+        </div>
+    </div>
+
+    <script>
+        // Daftar gambar slider
+        let images = [
+            {
+                src: "images/Gedung.jpg",
+                alt: "Gedung MI Darul Huda",
+                title: "Gedung Utama MI Darul Huda"
+            },
+            {
+                src: "images/logo-mi-darul-huda.png",
+                alt: "Kegiatan Belajar",
+                title: "Proses Belajar Mengajar di Kelas"
+            },
+            {
+                src: "images/fasilitas-sekolah.jpg",
+                alt: "Fasilitas Sekolah",
+                title: "Fasilitas Modern MI Darul Huda"
+            },
+            {
+                src: "images/kegiatan-ekstrakurikuler.jpg",
+                alt: "Kegiatan Ekstrakurikuler",
+                title: "Kegiatan Ekstrakurikuler Siswa"
+            }
+        ];
+
+        let index = 0;
+        const imgTag = document.getElementById("slideImage");
+        const dots = document.querySelectorAll('.slider-controls .dot');
+
+        // Fungsi untuk memperbarui slider
+        function updateSlider() {
+            imgTag.style.opacity = 0;
+            
+            setTimeout(() => {
+                imgTag.src = images[index];
+                imgTag.style.opacity = 1;
+                
+                // Update active dot
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }, 300);
+        }
+
+        // Auto slide setiap 3 detik
+        let slideInterval = setInterval(() => {
+            index = (index + 1) % images.length;
+            updateSlider();
+        }, 3000);
+
+        // Event listeners untuk dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                // Hentikan auto slide sementara
+                clearInterval(slideInterval);
+                
+                index = parseInt(this.getAttribute('data-index'));
+                updateSlider();
+                
+                // Mulai kembali auto slide setelah 5 detik
+                setTimeout(() => {
+                    slideInterval = setInterval(() => {
+                        index = (index + 1) % images.length;
+                        updateSlider();
+                    }, 3000);
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
