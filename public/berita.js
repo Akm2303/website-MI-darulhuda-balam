@@ -84,7 +84,7 @@
             const categories = {
                 'kegiatan': 'Kegiatan',
                 'pengumuman': 'Pengumuman',
-                'prestasi': 'Prestasi'
+                'ekstrakurikuler': 'Ekstrakurikuler'
             };
             return categories[category] || 'Umum';
         }
@@ -152,9 +152,8 @@
             alert('Berita berhasil ditambahkan!');
         }
         
-        // Fungsi untuk slider gambar
-        function initImageSlider() {
-            let images = [
+       // Daftar gambar slider
+        let images = [
             {
                 src: "images/Hariguru1.jpg",
                 alt: "Kegiatan Peringatan Hari Guru Nasional",
@@ -180,74 +179,112 @@
                 description: "Gedung Utama MI Darul Huda"
             }
         ];
-            let index = 0;
-            const imgTag = document.getElementById("slideImage");
+
+        let index = 0;
+        const imgTag = document.getElementById("slideImage");
+        const captionTitle = document.querySelector('.slider-caption h3');
+        const captionDesc = document.querySelector('.slider-caption p');
+        const dots = document.querySelectorAll('.slider-controls .dot');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        // Fungsi untuk memperbarui slider
+        function updateSlider() {
+            imgTag.style.opacity = 0;
             
-            // Auto slide setiap 5 detik
-            setInterval(() => {
-                index = (index + 1) % images.length;
-                imgTag.style.opacity = 0;
+            setTimeout(() => {
+                imgTag.src = images[index].src;
+                imgTag.alt = images[index].alt;
+                captionTitle.textContent = images[index].title;
+                captionDesc.textContent = images[index].description;
+                imgTag.style.opacity = 1;
                 
-                setTimeout(() => {
-                    imgTag.src = images[index];
-                    imgTag.style.opacity = 1;
-                }, 300);
-            }, 5000);
+                // Update active dot
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }, 300);
         }
-        
-        // Event Listeners
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tampilkan berita saat halaman dimuat
-            displayNews();
-            
-            // Inisialisasi slider gambar
-            initImageSlider();
-            
-            // Filter berita berdasarkan kategori
-            document.querySelectorAll('.filter-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    filterNews(this.getAttribute('data-filter'));
-                });
-            });
-            
-            // Pencarian berita
-            document.getElementById('searchInput').addEventListener('input', function() {
-                searchNews(this.value);
-            });
-            
-            // Tambah berita baru
-            document.getElementById('newsForm').addEventListener('submit', addNews);
-            
-            // Bersihkan form
-            document.getElementById('clearForm').addEventListener('click', function() {
-                document.getElementById('newsForm').reset();
-            });
-            
-            // Toggle mobile menu
-            document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-                const nav = document.querySelector('nav');
-                nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-            });
-            
-            // Smooth scroll untuk navigasi
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Tutup menu mobile setelah klik
-                    if (window.innerWidth <= 768) {
-                        document.querySelector('nav').style.display = 'none';
-                    }
-                });
+
+        // Auto slide setiap 5 detik
+        let slideInterval = setInterval(() => {
+            nextSlide();
+        }, 10000);
+
+        // Fungsi untuk slide berikutnya
+        function nextSlide() {
+            index = (index + 1) % images.length;
+            updateSlider();
+        }
+
+        // Fungsi untuk slide sebelumnya
+        function prevSlide() {
+            index = (index - 1 + images.length) % images.length;
+            updateSlider();
+        }
+
+        // Event listeners untuk dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                // Hentikan auto slide sementara
+                clearInterval(slideInterval);
+                
+                index = parseInt(this.getAttribute('data-index'));
+                updateSlider();
+                
+                // Mulai kembali auto slide setelah 5 detik
+                setTimeout(() => {
+                    slideInterval = setInterval(() => {
+                        nextSlide();
+                    }, 10000);
+                }, 10000);
             });
         });
+
+        // Event listeners untuk tombol navigasi
+        prevBtn.addEventListener('click', function() {
+            clearInterval(slideInterval);
+            prevSlide();
+            setTimeout(() => {
+                slideInterval = setInterval(() => {
+                    nextSlide();
+                }, 10000);
+            }, 10000);
+        });
+
+        nextBtn.addEventListener('click', function() {
+            clearInterval(slideInterval);
+            nextSlide();
+            setTimeout(() => {
+                slideInterval = setInterval(() => {
+                    nextSlide();
+                }, 10000);
+            }, 10000);
+        });
+
+        // Pause slider saat hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                nextSlide();
+            }, 10000);
+        });
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+    
