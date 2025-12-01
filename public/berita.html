@@ -5,30 +5,237 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita Dan Kegiatan - MI Darul Huda</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="berita.css">
+   
 </head>
 <body>
+      <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <!-- <img src="images/logo yapisda.png" -->
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>MI Darul Huda Bandar Lampung</h1>
+                        <p>Mencerdaskan Kehidupan Bangsa</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#programs">Program</a></li>
+                        <li><a href="#news">Berita</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
     <div class="container">
         <header>
             <h1>Kegiatan MI Darul Huda</h1>
             <p class="subtitle">Melihat lebih dekat lingkungan belajar yang inspiratif</p>
         </header>
-        <!-- Slider Sederhana (Versi yang Anda minta) -->
-        <div class="slider-box">
-            <img id="slideImage" src="images/Gedung.jpg" alt="Gedung MI Darul Huda">
+        
+        <!-- Slider yang dipercantik -->
+        <div class="slider-container">
+            <div class="slider-box">
+                <img id="slideImage" src="images/Gedung.jpg" alt="Gedung MI Darul Huda">
+                <div class="slider-caption">
+                    <h3>Gedung Utama MI Darul Huda</h3>
+                    <p>Fasilitas modern yang mendukung proses belajar mengajar</p>
+                </div>
+                <div class="slider-nav slider-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="slider-nav slider-next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
             <div class="slider-controls">
                 <span class="dot active" data-index="0"></span>
                 <span class="dot" data-index="1"></span>
                 <span class="dot" data-index="2"></span>
                 <span class="dot" data-index="3"></span>
-                <span class="dot" data-index="4"></span>
             </div>
         </div>
         
-        <div style="text-align: center; margin-top: 30px;">
-            <p>Galeri ini menunjukkan berbagai kegiatan di MI Darul Huda yang mendukung proses belajar mengajar yang optimal.</p>
+        <div class="description">
+            <p>Galeri ini menunjukkan berbagai kegiatan di MI Darul Huda yang mendukung proses belajar mengajar yang optimal. Kami berkomitmen untuk menciptakan lingkungan belajar yang inspiratif dan mendukung perkembangan siswa secara holistik.</p>
         </div>
+        
+        <!-- Section Kegiatan -->
+        <section class="activities-section">
+            <div class="section-title">
+                <h2>Kegiatan Terbaru</h2>
+                <p>Berbagai aktivitas dan program unggulan yang dilaksanakan di MI Darul Huda</p>
+            </div>
+            
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Belajar">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Kegiatan Belajar Mengajar</h3>
+                        <p class="activity-description">Proses pembelajaran interaktif dengan metode yang menyenangkan untuk meningkatkan minat belajar siswa.</p>
+                        <div class="activity-meta">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>15 Maret 2025</span>
+                            </div>
+                            <div class="activity-category">
+                                Pendidikan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Olahraga">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Olahraga dan Kesehatan</h3>
+                        <p class="activity-description">Kegiatan olahraga rutin untuk menjaga kesehatan dan kebugaran siswa serta mengembangkan jiwa sportivitas.</p>
+                        <div class="activity-meta">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>10 Maret 2025</span>
+                            </div>
+                            <div class="activity-category">
+                                Olahraga
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Seni">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Pameran Seni Siswa</h3>
+                        <p class="activity-description">Pameran karya seni siswa yang menunjukkan kreativitas dan bakat seni yang dikembangkan di sekolah.</p>
+                        <div class="activity-meta">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>5 Maret 2025</span>
+                            </div>
+                            <div class="activity-category">
+                                Seni & Budaya
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1588072432836-4b4f66e6cb31?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Ekstrakurikuler">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Ekstrakurikuler Pramuka</h3>
+                        <p class="activity-description">Kegiatan kepramukaan untuk melatih kemandirian, kedisiplinan, dan kepemimpinan siswa.</p>
+                        <div class="activity-meta">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>28 Februari 2025</span>
+                            </div>
+                            <div class="activity-category">
+                                Ekstrakurikuler
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Perayaan Hari Besar">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Perayaan Hari Kemerdekaan</h3>
+                        <p class="activity-description">Berbagai lomba dan kegiatan seru dalam rangka memperingati Hari Kemerdekaan Indonesia.</p>
+                        <div class="activity-meta">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>17 Agustus 2025</span>
+                            </div>
+                            <div class="activity-category">
+                                Acara Sekolah
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Sosial">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Bakti Sosial</h3>
+                        <p class="activity-description">Kegiatan bakti sosial untuk melatih kepedulian siswa terhadap lingkungan sekitar.</p>
+                        <div class="activity-meta">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>12 Februari 2025</span>
+                            </div>
+                            <div class="activity-category">
+                                Sosial
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang MI Darul Huda</h3>
+                    <p>MI Darul Huda adalah lembaga pendidikan yang berkomitmen untuk memberikan pendidikan terbaik dengan kurikulum yang inovatif dan lingkungan belajar yang inspiratif.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Ir Sutami No. 32, Bandar Lampung</li>
+                        <li><i class="fas fa-phone"></i> +62 21 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@darulhuda.sch.id</li>
+                        <li><i class="fas fa-clock"></i> Senin - Jumat: 07.00 - 16.00 WIB</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="program.html">Program Pendidikan</a></li>
+                        <li><a href="#">Berita & Kegiatan</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MI Darul Huda Bandar Lampung. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Daftar gambar slider
@@ -36,35 +243,48 @@
             {
                 src: "images/Gedung.jpg",
                 alt: "Gedung MI Darul Huda",
-                title: "Gedung Utama MI Darul Huda"
+                title: "Gedung Utama MI Darul Huda",
+                description: "Fasilitas modern yang mendukung proses belajar mengajar"
             },
             {
                 src: "images/logo-mi-darul-huda.png",
                 alt: "Kegiatan Belajar",
-                title: "Proses Belajar Mengajar di Kelas"
+                title: "Proses Belajar Mengajar di Kelas",
+                description: "Suasana belajar yang kondusif dengan fasilitas lengkap"
             },
             {
                 src: "images/fasilitas-sekolah.jpg",
                 alt: "Fasilitas Sekolah",
-                title: "Fasilitas Modern MI Darul Huda"
+                title: "Fasilitas Modern MI Darul Huda",
+                description: "Berbagai fasilitas pendukung untuk kegiatan belajar siswa"
             },
             {
                 src: "images/kegiatan-ekstrakurikuler.jpg",
                 alt: "Kegiatan Ekstrakurikuler",
-                title: "Kegiatan Ekstrakurikuler Siswa"
+                title: "Kegiatan Ekstrakurikuler Siswa",
+                description: "Pengembangan bakat dan minat siswa melalui berbagai kegiatan ekstrakurikuler"
             }
         ];
 
         let index = 0;
         const imgTag = document.getElementById("slideImage");
+        const captionTitle = document.querySelector('.slider-caption h3');
+        const captionDesc = document.querySelector('.slider-caption p');
         const dots = document.querySelectorAll('.slider-controls .dot');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
 
         // Fungsi untuk memperbarui slider
         function updateSlider() {
             imgTag.style.opacity = 0;
             
             setTimeout(() => {
-                imgTag.src = images[index];
+                imgTag.src = images[index].src;
+                imgTag.alt = images[index].alt;
+                captionTitle.textContent = images[index].title;
+                captionDesc.textContent = images[index].description;
                 imgTag.style.opacity = 1;
                 
                 // Update active dot
@@ -74,11 +294,22 @@
             }, 300);
         }
 
-        // Auto slide setiap 3 detik
+        // Auto slide setiap 5 detik
         let slideInterval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+
+        // Fungsi untuk slide berikutnya
+        function nextSlide() {
             index = (index + 1) % images.length;
             updateSlider();
-        }, 3000);
+        }
+
+        // Fungsi untuk slide sebelumnya
+        function prevSlide() {
+            index = (index - 1 + images.length) % images.length;
+            updateSlider();
+        }
 
         // Event listeners untuk dots
         dots.forEach(dot => {
@@ -92,10 +323,54 @@
                 // Mulai kembali auto slide setelah 5 detik
                 setTimeout(() => {
                     slideInterval = setInterval(() => {
-                        index = (index + 1) % images.length;
-                        updateSlider();
-                    }, 3000);
+                        nextSlide();
+                    }, 5000);
                 }, 5000);
+            });
+        });
+
+        // Event listeners untuk tombol navigasi
+        prevBtn.addEventListener('click', function() {
+            clearInterval(slideInterval);
+            prevSlide();
+            setTimeout(() => {
+                slideInterval = setInterval(() => {
+                    nextSlide();
+                }, 5000);
+            }, 5000);
+        });
+
+        nextBtn.addEventListener('click', function() {
+            clearInterval(slideInterval);
+            nextSlide();
+            setTimeout(() => {
+                slideInterval = setInterval(() => {
+                    nextSlide();
+                }, 5000);
+            }, 5000);
+        });
+
+        // Pause slider saat hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                nextSlide();
+            }, 5000);
+        });
+
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
             });
         });
     </script>
