@@ -1,5 +1,4 @@
-
-        // Data berita contoh
+ // Data berita contoh
         const sampleNews = [
             {
                 id: 1,
@@ -233,4 +232,3 @@
                 });
             });
         });
-    
