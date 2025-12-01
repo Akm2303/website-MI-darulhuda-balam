@@ -4,8 +4,8 @@
                 id: 1,
                 title: "Penerimaan Siswa Baru Tahun Ajaran 2025/2026",
                 category: "pengumuman",
-                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                excerpt: "Pendaftaran siswa baru untuk tahun ajaran 2025/2026 telah dibuka. Segera daftarkan putra-putri Anda...",
+                image: "images/Hariguru2.jpg",
+                excerpt: "Test",
                 content: "Pendaftaran siswa baru untuk tahun ajaran 2025/2026 telah dibuka. Segera daftarkan putra-putri Anda. Persyaratan dan informasi lengkap dapat dilihat di bagian pengumuman.",
                 author: "Admin Sekolah",
                 date: "15 Maret 2025"
@@ -14,7 +14,7 @@
                 id: 2,
                 title: "Perayaan Hari Guru Nasional 2025",
                 category: "kegiatan",
-                src: "images/Hariguru1.jpg",
+                image: "images/Hariguru1.jpg",
                 excerpt: "Kegiatan Peringatan Hari Guru Nasional.",
                 content: "Dalam Rangka Memperingati Hari guru nasional TA 2025/2026 MI Darul Huda Melakukan Berbagi Kegiatan Salah satunya melakukan upacara",
                 author: "TU",
@@ -23,8 +23,8 @@
             {
                 id: 3,
                 title: "Siswa MI Darul Huda Juara Olimpiade Matematika Tingkat Kota",
-                category: "prestasi",
-                image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                category: "Ekstrakurikuler",
+                image: "images/Eskul1.jpg",
                 excerpt: "Ahmad Fauzi, siswa kelas 5 MI Darul Huda berhasil meraih juara 1 Olimpiade Matematika tingkat Kota Bandar Lampung...",
                 content: "Ahmad Fauzi, siswa kelas 5 MI Darul Huda berhasil meraih juara 1 Olimpiade Matematika tingkat Kota Bandar Lampung. Prestasi ini membanggakan seluruh keluarga besar sekolah.",
                 author: "Guru Matematika",
@@ -58,7 +58,6 @@
                         <span class="news-category">${getCategoryName(news.category)}</span>
                         <h3 class="news-title">${news.title}</h3>
                         <p class="news-excerpt">${news.excerpt}</p>
-                        // <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
                         <div class="news-meta">
                             <div class="news-date">
                                 <i class="far fa-calendar-alt"></i>
