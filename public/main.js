@@ -119,56 +119,56 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         }
         
-        // Fungsi untuk memuat berita dari Firestore
-        function loadNews() {
-            const newsContainer = document.getElementById('news-container');
+        // // Fungsi untuk memuat berita dari Firestore
+        // function loadNews() {
+        //     const newsContainer = document.getElementById('news-container');
             
-            // Contoh data berita (dalam implementasi nyata, data akan diambil dari Firestore)
-            const newsData = [
-                {
-                    id: 1,
-                    title: "Peringatan Hari Pendidikan Nasional 2023",
-                    date: "2 Mei 2023",
-                    excerpt: "Sekolah kami merayakan Hari Pendidikan Nasional dengan berbagai kegiatan menarik dan inspiratif.",
-                    image: "news1.jpg"
-                },
-                {
-                    id: 2,
-                    title: "Siswa Berprestasi di Olimpiade Sains Nasional",
-                    date: "15 April 2023",
-                    excerpt: "Dua siswa kami berhasil meraih medali perak dalam Olimpiade Sains Nasional tingkat provinsi.",
-                    image: "news2.jpg"
-                },
-                {
-                    id: 3,
-                    title: "Workshop Parenting untuk Orang Tua Siswa",
-                    date: "28 Maret 2023",
-                    excerpt: "Kami menyelenggarakan workshop parenting dengan tema 'Mendidik Anak di Era Digital'.",
-                    image: "news3.jpg"
-                }
-            ];
+        //     // Contoh data berita (dalam implementasi nyata, data akan diambil dari Firestore)
+        //     const newsData = [
+        //         {
+        //             id: 1,
+        //             title: "Peringatan Hari Pendidikan Nasional 2023",
+        //             date: "2 Mei 2023",
+        //             excerpt: "Sekolah kami merayakan Hari Pendidikan Nasional dengan berbagai kegiatan menarik dan inspiratif.",
+        //             image: "news1.jpg"
+        //         },
+        //         {
+        //             id: 2,
+        //             title: "Siswa Berprestasi di Olimpiade Sains Nasional",
+        //             date: "15 April 2023",
+        //             excerpt: "Dua siswa kami berhasil meraih medali perak dalam Olimpiade Sains Nasional tingkat provinsi.",
+        //             image: "news2.jpg"
+        //         },
+        //         {
+        //             id: 3,
+        //             title: "Workshop Parenting untuk Orang Tua Siswa",
+        //             date: "28 Maret 2023",
+        //             excerpt: "Kami menyelenggarakan workshop parenting dengan tema 'Mendidik Anak di Era Digital'.",
+        //             image: "news3.jpg"
+        //         }
+        //     ];
             
-            // Simulasi loading data dari Firestore
-            setTimeout(() => {
-                newsContainer.innerHTML = '';
+        //     // Simulasi loading data dari Firestore
+        //     setTimeout(() => {
+        //         newsContainer.innerHTML = '';
                 
-                newsData.forEach(news => {
-                    const newsCard = document.createElement('div');
-                    newsCard.className = 'news-card';
-                    newsCard.innerHTML = `
-                        <div class="news-image">
-                            <div style="width: 100%; height: 100%; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; color: #6b7280;">
-                                <i class="fas fa-newspaper" style="font-size: 40px;"></i>
-                            </div>
-                        </div>
-                        <div class="news-content">
-                            <div class="news-date">${news.date}</div>
-                            <h3>${news.title}</h3>
-                            <p>${news.excerpt}</p>
-                            <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    `;
-                    newsContainer.appendChild(newsCard);
-                });
-            }, 2000);
-        }
+        //         newsData.forEach(news => {
+        //             const newsCard = document.createElement('div');
+        //             newsCard.className = 'news-card';
+        //             newsCard.innerHTML = `
+        //                 <div class="news-image">
+        //                     <div style="width: 100%; height: 100%; background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; color: #6b7280;">
+        //                         <i class="fas fa-newspaper" style="font-size: 40px;"></i>
+        //                     </div>
+        //                 </div>
+        //                 <div class="news-content">
+        //                     <div class="news-date">${news.date}</div>
+        //                     <h3>${news.title}</h3>
+        //                     <p>${news.excerpt}</p>
+        //                     // <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+        //                 </div>
+        //             `;
+        //             newsContainer.appendChild(newsCard);
+        //         });
+        //     }, 2000);
+        // }
