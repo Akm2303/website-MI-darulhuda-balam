@@ -96,10 +96,10 @@
         transition: opacity 0.8s ease;
     }
 </style>
-<script>
+<!-- <script>
     // Daftar gambar slider
     let images = [
-        "..images/darulhuda-gd",
+        src=..ima,
         "..images/Gedung.jpg",
         "..images/logo-mi-darul-huda.png"
     ];
@@ -117,7 +117,7 @@
             imgTag.style.opacity = 1;
         }, 300);
     }, 3000);
-</script>
+</script> -->
 
                 </div>
             </div>
@@ -143,10 +143,69 @@
     <section id="news">
         <div class="container">
             <div class="section-title">
-                <h2><a href="berita.html">Berita & Kegiatan Terbaru</a></h2>
+                <h2>Berita & Kegiatan Terbaru</h2>
                 <p>Ikuti perkembangan terbaru dari kegiatan sekolah dan informasi penting lainnya.</p>
             </div>
-
+            
+            <div class="news-container">
+                <div class="news-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Cari berita...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Semua</button>
+                        <button class="filter-btn" data-filter="kegiatan">Kegiatan</button>
+                        <button class="filter-btn" data-filter="pengumuman">Pengumuman</button>
+                        <button class="filter-btn" data-filter="prestasi">Prestasi</button>
+                    </div>
+                </div>
+                
+                <div class="news-grid" id="newsGrid">
+                    <!-- Berita akan dimuat di sini -->
+                </div>
+                
+                <div class="view-all">
+                    <a href="berita.html" class="btn">Lihat Semua Berita</a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Admin Panel -->
+    <section class="admin-panel" id="adminPanel">
+        <div class="container">
+            <h3>Panel Admin - Tambah Berita Baru</h3>
+            <div class="admin-form">
+                <form id="newsForm">
+                    <div class="form-group">
+                        <label for="newsTitle">Judul Berita</label>
+                        <input type="text" id="newsTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsCategory">Kategori</label>
+                        <select id="newsCategory" class="form-control" required>
+                            <option value="">Pilih Kategori</option>
+                            <option value="kegiatan">Kegiatan</option>
+                            <option value="pengumuman">Pengumuman</option>
+                            <option value="prestasi">Prestasi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsImage">URL Gambar</label>
+                        <input type="text" id="newsImage" class="form-control" placeholder="https://example.com/image.jpg" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsContent">Isi Berita</label>
+                        <textarea id="newsContent" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="newsAuthor">Penulis</label>
+                        <input type="text" id="newsAuthor" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn">Tambah Berita</button>
+                    <button type="button" id="clearForm" class="btn btn-outline">Bersihkan Form</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -289,6 +348,7 @@
         const db = firebase.firestore();
     </script>
     <script src="main.js"></script>
+    <script src="berita.js"></script>
 
     
 </body>
