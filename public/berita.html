@@ -83,15 +83,19 @@
                 <h2>Kegiatan Terbaru</h2>
                 <p>Berbagai aktivitas dan program unggulan yang dilaksanakan di MI Darul Huda</p>
             </div>
-            <div class="form-group">
-                 <label for="newsCategory">Kategori</label>
-                 <select id="newsCategory" class="form-control" required>
-                            <option value="">Pilih Kategori</option>
-                            <option value="kegiatan">Kegiatan</option>
-                            <option value="pengumuman">Pengumuman</option>
-                            <option value="prestasi">Prestasi</option>
-                 </select>
-            </div>
+           <div class="news-container">
+                <div class="news-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Cari berita...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Semua</button>
+                        <button class="filter-btn" data-filter="kegiatan">Kegiatan</button>
+                        <button class="filter-btn" data-filter="pengumuman">Pengumuman</button>
+                        <button class="filter-btn" data-filter="ekstrakurikuler">Ekstrakurikuler</button>
+                    </div>
+                </div>
             <div class="activities-grid">
                 <div class="activity-card">
                     <div class="activity-image">
