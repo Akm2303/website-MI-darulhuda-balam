@@ -12,13 +12,13 @@
             },
             {
                 id: 2,
-                title: "Perayaan Hari Kemerdekaan Indonesia ke-80",
+                title: "Perayaan Hari Guru Nasional 2025",
                 category: "kegiatan",
-                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                excerpt: "Siswa-siswi MI Darul Huda merayakan Hari Kemerdekaan Indonesia dengan berbagai lomba dan kegiatan seru...",
-                content: "Siswa-siswi MI Darul Huda merayakan Hari Kemerdekaan Indonesia dengan berbagai lomba dan kegiatan seru. Acara diikuti dengan semangat kebersamaan dan nasionalisme.",
-                author: "Guru Olahraga",
-                date: "17 Agustus 2025"
+                src: "images/Hariguru1.jpg",
+                excerpt: "Kegiatan Peringatan Hari Guru Nasional.",
+                content: "Dalam Rangka Memperingati Hari guru nasional TA 2025/2026 MI Darul Huda Melakukan Berbagi Kegiatan Salah satunya melakukan upacara",
+                author: "TU",
+                date: "27 November 2025"
             },
             {
                 id: 3,
@@ -58,7 +58,7 @@
                         <span class="news-category">${getCategoryName(news.category)}</span>
                         <h3 class="news-title">${news.title}</h3>
                         <p class="news-excerpt">${news.excerpt}</p>
-                        <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        // <a href="#" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
                         <div class="news-meta">
                             <div class="news-date">
                                 <i class="far fa-calendar-alt"></i>
@@ -155,12 +155,32 @@
         
         // Fungsi untuk slider gambar
         function initImageSlider() {
-            const images = [
-                "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
-                "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
-                "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-            ];
-            
+            let images = [
+            {
+                src: "images/Hariguru1.jpg",
+                alt: "Kegiatan Peringatan Hari Guru Nasional",
+                title: "Hasi Guru Nasional 2025",
+                description: "Dalam Rangka Memperingati Hari guru nasional TA 2025/2026 MI Darul Huda Melakukan Berbagi Kegiatan Salah satunya melakukan upacara"
+            },
+            {
+                src: "images/logo-mi-darul-huda.png",
+                alt: "Acara Perpisahan Kelas VI TA 2022/2023",
+                title: "Perpisahan Kelas VI",
+                description: "Dokumentasi Acara Perpisahan Kelas VI"
+            },
+            {
+                src: "images/Eskul1.jpg",
+                alt: "Ekstrakurikuler MI Darul Huda",
+                title: "Ekstrakurikuler MI Darul Huda",
+                description: "Ekstrakurikuler MI Darul Huda Untuk Mendukung Potensi Anak"
+            },
+            {
+                src: "images/Gedung.jpg",
+                alt: "Gedung MI Darul Huda",
+                title: "Gedung Utama MI Darul Huda",
+                description: "Gedung Utama MI Darul Huda"
+            }
+        ];
             let index = 0;
             const imgTag = document.getElementById("slideImage");
             
