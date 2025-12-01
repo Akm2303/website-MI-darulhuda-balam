@@ -4,33 +4,64 @@
                 id: 1,
                 title: "Penerimaan Siswa Baru Tahun Ajaran 2025/2026",
                 category: "pengumuman",
-                image: "images/Hariguru2.jpg",
-                excerpt: "Test",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                excerpt: "Pendaftaran siswa baru untuk tahun ajaran 2025/2026 telah dibuka. Segera daftarkan putra-putri Anda...",
                 content: "Pendaftaran siswa baru untuk tahun ajaran 2025/2026 telah dibuka. Segera daftarkan putra-putri Anda. Persyaratan dan informasi lengkap dapat dilihat di bagian pengumuman.",
                 author: "Admin Sekolah",
                 date: "15 Maret 2025"
             },
             {
                 id: 2,
-                title: "Perayaan Hari Guru Nasional 2025",
+                title: "Perayaan Hari Kemerdekaan Indonesia ke-80",
                 category: "kegiatan",
-                image: "images/Hariguru1.jpg",
-                excerpt: "Kegiatan Peringatan Hari Guru Nasional.",
-                content: "Dalam Rangka Memperingati Hari guru nasional TA 2025/2026 MI Darul Huda Melakukan Berbagi Kegiatan Salah satunya melakukan upacara",
-                author: "TU",
-                date: "27 November 2025"
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                excerpt: "Siswa-siswi MI Darul Huda merayakan Hari Kemerdekaan Indonesia dengan berbagai lomba dan kegiatan seru...",
+                content: "Siswa-siswi MI Darul Huda merayakan Hari Kemerdekaan Indonesia dengan berbagai lomba dan kegiatan seru. Acara diikuti dengan semangat kebersamaan dan nasionalisme.",
+                author: "Guru Olahraga",
+                date: "17 Agustus 2025"
             },
             {
                 id: 3,
                 title: "Siswa MI Darul Huda Juara Olimpiade Matematika Tingkat Kota",
-                category: "Ekstrakurikuler",
-                image: "images/Eskul1.jpg",
+                category: "prestasi",
+                image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
                 excerpt: "Ahmad Fauzi, siswa kelas 5 MI Darul Huda berhasil meraih juara 1 Olimpiade Matematika tingkat Kota Bandar Lampung...",
                 content: "Ahmad Fauzi, siswa kelas 5 MI Darul Huda berhasil meraih juara 1 Olimpiade Matematika tingkat Kota Bandar Lampung. Prestasi ini membanggakan seluruh keluarga besar sekolah.",
                 author: "Guru Matematika",
                 date: "10 September 2025"
             }
         ];
+            // {
+            //     id: 1,
+            //     title: "Penerimaan Siswa Baru Tahun Ajaran 2025/2026",
+            //     category: "pengumuman",
+            //     image: "images/Hariguru2.jpg",
+            //     excerpt: "Test",
+            //     content: "Pendaftaran siswa baru untuk tahun ajaran 2025/2026 telah dibuka. Segera daftarkan putra-putri Anda. Persyaratan dan informasi lengkap dapat dilihat di bagian pengumuman.",
+            //     author: "Admin Sekolah",
+            //     date: "15 Maret 2025"
+            // },
+            // {
+            //     id: 2,
+            //     title: "Perayaan Hari Guru Nasional 2025",
+            //     category: "kegiatan",
+            //     image: "images/Hariguru1.jpg",
+            //     excerpt: "Kegiatan Peringatan Hari Guru Nasional.",
+            //     content: "Dalam Rangka Memperingati Hari guru nasional TA 2025/2026 MI Darul Huda Melakukan Berbagi Kegiatan Salah satunya melakukan upacara",
+            //     author: "TU",
+            //     date: "27 November 2025"
+            // },
+            // {
+            //     id: 3,
+            //     title: "Ekstrakurikuler Pramuka MI Darul Huda",
+            //     category: "ekstrakurikuler",
+            //     image: "images/Eskul1.jpg",
+            //     excerpt: "Ahmad Fauzi, siswa kelas 5 MI Darul Huda berhasil meraih juara 1 Olimpiade Matematika tingkat Kota Bandar Lampung...",
+            //     content: "Ahmad Fauzi, siswa kelas 5 MI Darul Huda berhasil meraih juara 1 Olimpiade Matematika tingkat Kota Bandar Lampung. Prestasi ini membanggakan seluruh keluarga besar sekolah.",
+            //     author: "Guru Matematika",
+            //     date: "10 September 2025"
+            // }
+       // ];
 
         // Fungsi untuk menampilkan berita
         function displayNews(newsArray = sampleNews) {
